@@ -2,6 +2,8 @@
 
 これは、オリジナルの [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way) に、私が実行したときの覚え書きを付与していったものです。
 
+ちなみに[和訳されている方もいらっしゃいます](https://springmt.github.io/kubernetes-the-hard-way-ja/kubernetes_the_hard_way/)。
+
 # Kubernetes The Hard Way
 
 This tutorial walks you through setting up Kubernetes the hard way. This guide is not for people looking for a fully automated command to bring up a Kubernetes cluster. If that's you then check out [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine), or the [Getting Started Guides](https://kubernetes.io/docs/setup).

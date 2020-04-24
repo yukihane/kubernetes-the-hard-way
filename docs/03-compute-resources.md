@@ -20,6 +20,23 @@ Create the `kubernetes-the-hard-way` custom VPC network:
 gcloud compute networks create kubernetes-the-hard-way --subnet-mode custom
 ```
 
+_メモ:_
+_次のエラーメッセージが出て失敗した。示されている URL 先へ飛んで請求先アカウントを今回のプロジェクトにリンクさせる必要があった。_
+
+```
+API [compute.googleapis.com] not enabled on project [<my PROJECT_NUMBER>].
+Would you like to enable and retry (this will take a few minutes)?
+(y/N)?  y
+
+Enabling service [compute.googleapis.com] on project [<my PROJECT_NUMBER>]...
+ERROR: (gcloud.compute.networks.create) FAILED_PRECONDITION: Billing must be enabled for activation of service '[compute.googleapis.com, compute.googleapis.com, compute.googleapis.com]' in project '<my PROJECT_NUMBER>' to proceed.
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - description: "billing-enabled: Project's billing account is not found. https://console.developers.google.com/project/<my PROJECT_NUMBER>/settings"
+    subject: '<my PROJECT_NUMBER>'
+    type: serviceusage/billing-enabled
+```
+
 A [subnet](https://cloud.google.com/compute/docs/vpc/#vpc_networks_and_subnets) must be provisioned with an IP address range large enough to assign a private IP address to each node in the Kubernetes cluster.
 
 Create the `kubernetes` subnet in the `kubernetes-the-hard-way` VPC network:
@@ -76,6 +93,11 @@ Allocate a static IP address that will be attached to the external load balancer
 gcloud compute addresses create kubernetes-the-hard-way \
   --region $(gcloud config get-value compute/region)
 ```
+
+_メモ:_
+_次の URL が作成された:_
+
+> Created [https://www.googleapis.com/compute/v1/projects/\<my PROJECT_NAME\>/regions/us-west1/addresses/kubernetes-the-hard-way].
 
 Verify the `kubernetes-the-hard-way` static IP address was created in your default compute region:
 
