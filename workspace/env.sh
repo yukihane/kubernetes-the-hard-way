@@ -1,2 +1,2 @@
-dir=$(dirname "$BASH_SOURCE[0]")
+dir="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 export PATH=$dir/bin:$PATH
