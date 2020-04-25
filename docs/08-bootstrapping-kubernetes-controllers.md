@@ -34,6 +34,21 @@ wget -q --show-progress --https-only --timestamping \
   "https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kubectl"
 ```
 
+---
+
+_メモ:_
+_[最新版](https://storage.googleapis.com/kubernetes-release/release/stable.txt)は v1.18.2 だったのでそれを用いることにした。_
+_上記の URL に含まれているバージョン番号を書き換えても上手く行くと思うが、今回は次の手順でバイナリを取得した。_
+
+```
+curl https://get.k8s.io|bash
+tar xf kubernetes/server/kubernetes-server-linux-amd64.tar.gz
+```
+
+_上記を実行すると `kubernetes/server/bin` にサーババイナリ一式が入っている。_
+
+---
+
 Install the Kubernetes binaries:
 
 ```
@@ -107,6 +122,19 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 ```
+
+---
+
+_メモ:_
+_1.18.2 でこのまま実行すると、起動に失敗し、 `/var/log/syslog` に次のエラーメッセージが出力されていた:_
+
+> Error: invalid value api/all=
+
+_これは(ファイルの記述内容と照らし合わせると分かるが) `--runtime-config` に指定している値。_
+_[現在のドキュメント](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)を見ると、設定する値としては `api/all=true` が正しい。_
+_つまり、 `--runtime-config=api/all=true` という設定になる。_
+
+---
 
 ### Configure the Kubernetes Controller Manager
 

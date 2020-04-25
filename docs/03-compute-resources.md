@@ -20,6 +20,8 @@ Create the `kubernetes-the-hard-way` custom VPC network:
 gcloud compute networks create kubernetes-the-hard-way --subnet-mode custom
 ```
 
+---
+
 _メモ:_
 _次のエラーメッセージが出て失敗した。示されている URL 先へ飛んで請求先アカウントを今回のプロジェクトにリンクさせる必要があった。_
 
@@ -36,6 +38,8 @@ ERROR: (gcloud.compute.networks.create) FAILED_PRECONDITION: Billing must be ena
     subject: '<my PROJECT_NUMBER>'
     type: serviceusage/billing-enabled
 ```
+
+---
 
 A [subnet](https://cloud.google.com/compute/docs/vpc/#vpc_networks_and_subnets) must be provisioned with an IP address range large enough to assign a private IP address to each node in the Kubernetes cluster.
 
@@ -94,10 +98,14 @@ gcloud compute addresses create kubernetes-the-hard-way \
   --region $(gcloud config get-value compute/region)
 ```
 
+---
+
 _メモ:_
 _次の URL が作成された:_
 
 > Created [https://www.googleapis.com/compute/v1/projects/\<my PROJECT_NAME\>/regions/us-west1/addresses/kubernetes-the-hard-way].
+
+---
 
 Verify the `kubernetes-the-hard-way` static IP address was created in your default compute region:
 

@@ -25,6 +25,13 @@ wget -q --show-progress --https-only --timestamping \
   "https://github.com/etcd-io/etcd/releases/download/v3.4.0/etcd-v3.4.0-linux-amd64.tar.gz"
 ```
 
+---
+
+_メモ:_
+_現時点での最新版は v3.4.7 だったのでそれを用いることにした。_
+
+---
+
 Extract and install the `etcd` server and the `etcdctl` command line utility:
 
 ```

@@ -20,6 +20,8 @@ Verify the Google Cloud SDK version is 262.0.0 or higher:
 gcloud version
 ```
 
+---
+
 _メモ:_
 _今回試したバージョンは次の通り。_
 
@@ -33,6 +35,8 @@ gsutil 4.49
 kubectl 2020.04.10
 ```
 
+---
+
 ### Set a Default Compute Region and Zone
 
 This tutorial assumes a default compute region and zone have been configured.
@@ -43,8 +47,12 @@ If you are using the `gcloud` command-line tool for the first time `init` is the
 gcloud init
 ```
 
+---
+
 _メモ:_
 _`gcloud init` を実行した後に表示されるプロンプトで"新しいプロジェクトを作成する"を選び、何かユニークな(※他の人とも被ってはいけないっぽい)名前のプロジェクトを作成しておく必要がある。あるいは`gcloud projects create`でプロジェクトを作成する([#219](https://github.com/kelseyhightower/kubernetes-the-hard-way/issues/219))。([#225](https://github.com/kelseyhightower/kubernetes-the-hard-way/pull/225)のせいで余計にわかりにくくなってないか…？)_
+
+---
 
 Then be sure to authorize gcloud to access the Cloud Platform with your Google user credentials:
 

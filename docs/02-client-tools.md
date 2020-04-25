@@ -75,12 +75,16 @@ Runtime: go1.13
 
 The `kubectl` command line utility is used to interact with the Kubernetes API Server. Download and install `kubectl` from the official release binaries:
 
+---
+
 _メモ:_
 _`kubectl`コマンドは次の`gcloud`コマンドでインストールすることもできる。[参考](https://cloud.google.com/kubernetes-engine/docs/quickstart?hl=ja#choosing_a_shell)_
 
 ```
 gcloud components install kubectl
 ```
+
+---
 
 ### OS X
 

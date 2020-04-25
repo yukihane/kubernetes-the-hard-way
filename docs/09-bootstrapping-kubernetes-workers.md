@@ -58,6 +58,18 @@ wget -q --show-progress --https-only --timestamping \
   https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kubelet
 ```
 
+---
+
+ここで導入するものも最新版とすることにした。
+
+- cri-tools v1.18.0
+- runc 1.0-rc10
+- CNI Plugins v0.8.5
+- containerd 1.3.4
+- kubernetes v1.18.2
+
+---
+
 Create the installation directories:
 
 ```
