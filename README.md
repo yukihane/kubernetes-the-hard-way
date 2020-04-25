@@ -2,7 +2,7 @@
 
 これは、オリジナルの [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way) に、私が実行したときの覚え書きを付与していったものです。
 
-ちなみに[和訳されている方もいらっしゃいます](https://springmt.github.io/kubernetes-the-hard-way-ja/kubernetes_the_hard_way/)。
+ちなみに和訳されている方もいらっしゃるようです([1](https://springmt.github.io/kubernetes-the-hard-way-ja/kubernetes_the_hard_way/), [2](https://github.com/kelseyhightower/kubernetes-the-hard-way/issues/483))。
 
 # Kubernetes The Hard Way
 
